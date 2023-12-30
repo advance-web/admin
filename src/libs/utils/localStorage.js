@@ -6,6 +6,10 @@ export const setJwt = (token) => {
   localStorage.setItem('jwt', token);
 };
 
+export const removeJwt = () => {
+  localStorage.removeItem('jwt');
+};
+
 export const setRedirect = (url) => {
   localStorage.setItem('redirect', url);
 };
