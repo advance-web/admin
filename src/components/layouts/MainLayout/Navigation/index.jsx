@@ -14,7 +14,6 @@ const Navigation = () => {
     <Sider width={200}>
       <Menu
         mode="inline"
-        defaultSelectedKeys={['1']}
         style={{
           height: '100%',
           borderRight: 0,
