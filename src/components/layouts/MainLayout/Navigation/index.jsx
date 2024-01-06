@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { LaptopOutlined, UserOutlined } from '@ant-design/icons';
+import { HeatMapOutlined, LaptopOutlined, UserOutlined } from '@ant-design/icons';
 import { Layout, Menu } from 'antd';
 const { Sider } = Layout;
 
 const items = [
   { icon: UserOutlined, label: 'Account', path: '/account' },
   { icon: LaptopOutlined, label: 'Classroom', path: '/classroom' },
+  { icon: HeatMapOutlined, label: 'Mapping Id student', path: '/mapping-id-student' },
 ];
 
 const Navigation = () => {
