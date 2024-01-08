@@ -9,11 +9,6 @@ import AccountStatus from './components/AccountStatus';
 import LockAction from './components/StatusAction';
 
 const columns = [
-  // {
-  //   title: 'Id',
-  //   dataIndex: '_id',
-  //   key: 'id',
-  // },
   {
     title: 'Id Mapping',
     dataIndex: 'idMapping',
