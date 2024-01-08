@@ -8,7 +8,9 @@ import MainLayout from './components/layouts/MainLayout';
 import AuthContext from './contexts/auth/auth-context';
 import Account from './pages/account';
 import Classroom from './pages/classroom';
+import ReadFileExcelListStudents from './pages/import-excel-list-students';
 import Main from './pages/main';
+import AdminMapIdStudent from './pages/mapping-id-student';
 import SignIn from './pages/sign-in';
 import { getMe } from './services/auth';
 
@@ -60,6 +62,22 @@ function App() {
             element={
               <ProtectedRoute>
                 <Classroom />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/mapping-id-student"
+            element={
+              <ProtectedRoute>
+                <AdminMapIdStudent />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/import-excel-list-students"
+            element={
+              <ProtectedRoute>
+                <ReadFileExcelListStudents />
               </ProtectedRoute>
             }
           />
