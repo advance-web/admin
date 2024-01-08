@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Form, Input, InputNumber, Popconfirm, Table, Typography } from 'antd';
 import PropTypes from 'prop-types';
 
-import { createAndUpdateIdMappingByTeacher, getAllUser } from '../../services/account';
+import { createAndUpdateIdMappingByAdmin, getAllUser } from '../../services/account';
 
 const EditableCell = ({ editing, dataIndex, title, inputType, children, ...restProps }) => {
   const inputNode = inputType === 'number' ? <InputNumber /> : <Input />;
@@ -88,7 +88,7 @@ const AdminMappingIdStudent = () => {
 
         console.log('Data mapping id: ', dataMappingId);
 
-        const updatedIdMappingRes = await createAndUpdateIdMappingByTeacher(idUser, dataMappingId);
+        const updatedIdMappingRes = await createAndUpdateIdMappingByAdmin(idUser, dataMappingId);
         console.log('Mapping respond: ', updatedIdMappingRes);
         if (updatedIdMappingRes.data.status == 'success') {
           setData(newData);

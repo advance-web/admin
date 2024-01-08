@@ -12,6 +12,6 @@ export const changeAccountStatus = (id, isLocked) => {
   return axios.patch(UPDATE_USER_ENDPOINT(id), { isLocked });
 };
 
-export const createAndUpdateIdMappingByTeacher = (idUser, data) => {
+export const createAndUpdateIdMappingByAdmin = (idUser, data) => {
   return axios.patch(TEACHER_CREATE_OR_UPDATE_IDMAPPING_ENDPOINT(idUser), data);
 };
