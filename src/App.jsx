@@ -26,14 +26,15 @@ function App() {
   const { setUser, setLoaded } = useContext(AuthContext);
   useQuery({
     queryKey: 'me',
-    queryFn: async () => {
-      const data = await getMe();
-      setLoaded(true);
-      return data;
-    },
+    queryFn: getMe,
     enabled: true,
     onSuccess: (data) => {
       setUser(data.data.data);
+      setLoaded(true);
+    },
+    onError: () => {
+      setUser(null);
+      setLoaded(true);
     },
   });
   return (

@@ -1,7 +1,7 @@
 import { useContext, useState } from 'react';
 import { useMutation } from 'react-query';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
-import { Button, Flex, Form, Input, Typography } from 'antd';
+import { Button, Flex, Form, Input, Spin, Typography } from 'antd';
 import styled from 'styled-components';
 
 import AuthContext from '../../contexts/auth/auth-context';
@@ -38,8 +38,8 @@ const SignIn = () => {
     <Flex vertical align="center">
       <Typography.Title>Trang quản lý</Typography.Title>
       <StyledContainer>
-        {isLoading && <Typography.Title> loading </Typography.Title>}
-        {error && <Typography.Title> Sai mật khẩu </Typography.Title>}
+        {isLoading && <Spin />}
+        {error && <Typography.Title type="danger"> Sai mật khẩu </Typography.Title>}
         <Typography.Title> Đăng nhập </Typography.Title>
         <StyledForm name="normal_login" onFinish={onFinish}>
           <Form.Item
