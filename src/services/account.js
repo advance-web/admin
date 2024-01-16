@@ -2,7 +2,7 @@ import axios from '../libs/utils/axios';
 
 const GETALL_USER_ENDPOINT = '/admin/users';
 const UPDATE_USER_ENDPOINT = (id) => `/admin/users/${id}`;
-const TEACHER_CREATE_OR_UPDATE_IDMAPPING_ENDPOINT = (idUser) => `/admin/users/${idUser}`;
+const TEACHER_CREATE_OR_UPDATE_IDMAPPING_ENDPOINT = (idUser) => `/admin/id-mapping/${idUser}`;
 
 export const getAllUser = () => {
   return axios.get(GETALL_USER_ENDPOINT);

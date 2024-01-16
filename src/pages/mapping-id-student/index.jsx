@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Form, Input, InputNumber, Popconfirm, Table, Typography } from 'antd';
 import PropTypes from 'prop-types';
 
+import NotificationContext from '../../contexts/notification/notificationContext';
 import { createAndUpdateIdMappingByAdmin, getAllUser } from '../../services/account';
 
 const EditableCell = ({ editing, dataIndex, title, inputType, children, ...restProps }) => {
@@ -33,6 +34,7 @@ const AdminMappingIdStudent = () => {
   const [form] = Form.useForm();
   const [data, setData] = useState([]);
   const [editingKey, setEditingKey] = useState('');
+  const { openNotification } = useContext(NotificationContext);
 
   useEffect(() => {
     const getAllStudents = async () => {
@@ -83,7 +85,7 @@ const AdminMappingIdStudent = () => {
 
         const idUser = item.key;
         const dataMappingId = {
-          idMapping: row.idMapping,
+          id: row.idMapping,
         };
 
         console.log('Data mapping id: ', dataMappingId);
@@ -101,7 +103,11 @@ const AdminMappingIdStudent = () => {
         setEditingKey('');
       }
     } catch (errInfo) {
-      console.log('Validate Failed:', errInfo);
+      openNotification({
+        type: 'error',
+        title: 'Cập nhật mã số sinh viên',
+        description: 'Mã số sinh viên đã tồn tại',
+      });
     }
   };
   const columns = [
